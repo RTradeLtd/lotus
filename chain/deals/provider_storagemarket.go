@@ -1,5 +1,7 @@
 package deals
 
+// this file implements storagemarket.StorageClient
+
 import (
 	"context"
 
