@@ -1,0 +1,17 @@
+version: "3.5"
+services:
+  server:
+    image: rtradetech/lotus:latest
+    ports:
+      - target: 1235
+        published: 1235
+      - target: 8080
+        published: 8080
+    volumes:
+      - type: volume
+        source: lotus-data
+        target: /root/.lotus
+
+volumes:
+    lotus-data:
+    
