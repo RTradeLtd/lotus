@@ -13,4 +13,4 @@ COPY entrypoint.sh /bin/entrypoint.sh
 COPY nginx_docker_config.conf /etc/nginx/sites-enabled/lotus_api.conf
 EXPOSE 1235/tcp
 EXPOSE 8080/tcp
-ENTRYPOINT ["/bin/entrypoint.sh" ]
+ENTRYPOINT ["/bin/entrypoint.sh"]
