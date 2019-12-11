@@ -2,6 +2,7 @@ version: "3.5"
 services:
   server:
     image: rtradetech/lotus:latest
+    restart: always
     ports:
       - target: 1235
         published: 1235
