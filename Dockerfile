@@ -11,7 +11,6 @@ COPY --from=build-env /usr/local/bin/lotus /usr/local/bin/lotus
 COPY lotus_docker_config.toml /root/.lotus/config.toml
 COPY entrypoint.sh /bin/entrypoint.sh
 COPY nginx_docker_config.conf /etc/nginx/sites-enabled/lotus_api.conf
-# EXPOSE 1234/tcp
 EXPOSE 1235/tcp
 EXPOSE 8080/tcp
 ENTRYPOINT ["/bin/entrypoint.sh" ]
