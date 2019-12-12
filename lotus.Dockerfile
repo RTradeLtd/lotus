@@ -10,8 +10,8 @@ RUN apt-get update -y && apt-get install -y sudo mesa-opencl-icd ocl-icd-opencl-
 COPY --from=build-env /usr/local/bin/lotus /usr/local/bin/lotus
 COPY docker-files/lotus_docker_config.toml /root/.lotus/config.toml
 COPY docker-files/entrypoint.sh /bin/entrypoint.sh
-COPY docker-files/nginx_docker_config.conf /etc/nginx/sites-enabled/lotus_api.conf
-COPY docker-files/nginx.conf /etc/nginx/nginx.conf
+COPY docker-files/nginx_lotus_api_config.conf /etc/nginx/sites-enabled/lotus_api.conf
+COPY docker-files/nginx_lotus_main.conf /etc/nginx/nginx.conf
 EXPOSE 1235/tcp
 EXPOSE 8080/tcp
 ENTRYPOINT ["/bin/entrypoint.sh"]
