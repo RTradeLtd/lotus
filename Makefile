@@ -154,3 +154,12 @@ type-gen:
 
 print-%:
 	@echo $*=$($*)
+
+docker-build:
+	docker build -t rtradetech/lotus:latest .
+
+docker-push:
+	docker image push rtradetech/lotus:latest
+
+docker-run:
+	docker run -p "8080:8080" -p "1235:1235" -d rtradetech/lotus:latest
