@@ -8,10 +8,10 @@ RUN cd lotus && git pull && git checkout master && make clean all && sudo make i
 FROM golang:1.13
 RUN apt-get update -y && apt-get install -y sudo mesa-opencl-icd ocl-icd-opencl-dev nginx
 COPY --from=build-env /usr/local/bin/lotus /usr/local/bin/lotus
-COPY lotus_docker_config.toml /root/.lotus/config.toml
-COPY entrypoint.sh /bin/entrypoint.sh
-COPY nginx_docker_config.conf /etc/nginx/sites-enabled/lotus_api.conf
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY docker-files/lotus_docker_config.toml /root/.lotus/config.toml
+COPY docker-files/nginx_docker_config.conf /etc/nginx/sites-enabled/lotus_api.conf
+COPY docker-files/nginx.conf /etc/nginx/nginx.conf
+COPY docker-files/entrypoint.sh /bin/entrypoint.sh
 RUN mkdir /nginx-cache
 EXPOSE 1235/tcp
 EXPOSE 8080/tcp
